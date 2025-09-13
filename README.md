@@ -1,12 +1,25 @@
-# React + Vite
+# 🚀 AI Roadmap Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web app that helps users **plan and break down their personal or learning goals** into clear milestones and subtasks using the **Gemini API**.  
+It also includes **Firebase Authentication and Firestore** to store user tasks securely.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔐 User authentication (Sign Up / Log In) using Firebase
+- 📝 Input any goal with a timeline (e.g. "Learn Web Development in 30 days")
+- 🤖 Generates 3–5 milestones and subtasks using Gemini AI
+- 📋 Displays generated subtasks as task cards
+- 💾 Saves tasks to Firestore for each user
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 Tech Stack
+
+- **React + Vite** (frontend)
+- **Tailwind CSS** (styling)
+- **Firebase Authentication & Firestore** (backend)
+- **Gemini API (Google GenAI SDK)** (AI content generation)
+
+
