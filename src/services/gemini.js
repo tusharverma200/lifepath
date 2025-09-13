@@ -4,15 +4,25 @@ import { GoogleGenAI } from "@google/genai";
 const GEMINI_API_KEY =  import.meta.env.VITE_GEMINI_API_KEY;
 
 export async function generateRoadmap(goal, duration) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const startDateStr = tomorrow.toISOString().split("T")[0];
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + duration);
+    const endDateStr = endDate.toISOString().split("T")[0];
   const prompt = `
 You are a personal growth planner.
 Goal: "${goal}"
-Time available: ${duration} days.
+Total duration: ${duration} days.
 Break this goal into 3-5 milestones.
-For each milestone, give:
-- milestone title
-- start and end dates (YYYY-MM-DD)
-- 3-5 subtasks with title and deadline (between milestone start and end)
+Instructions for dates:
+- The first milestone's start date is ${startDateStr}.
+- The last milestone's end date is ${endDateStr}.
+- Distribute the milestones evenly between the start and end dates.
+- For each milestone, provide:
+  - milestone title
+  - start and end dates (YYYY-MM-DD)
+  - 3-5 subtasks, each with a title and a deadline (deadline must be between the milestone's start and end dates)
 Return JSON in this exact format:
 {
   "milestones": [
